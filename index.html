@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafaela Barcik – Psicóloga Clínica | Terapia Sexual e de Casal Online</title>
+<meta name="description" content="Psicóloga especializada em sexualidade humana e terapia de casal. Atendimento online em todo o Brasil. CRP 08/41844.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --burgundy:   #7d1114;
+  --pink:       #ee969a;
+  --blush:      #f9f4f0;
+  --red:        #b7191d;
+  --white:      #ffffff;
+  --text:       #1a0708;
+  --text-mid:   #5a2528;
+  --text-light: #9a6668;
+  --border:     #f0dada;
+  --red-hover:  #951316;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TIPOGRAFIA ── */
+.serif { font-family: 'Instrument Serif', serif; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 200;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 60px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; flex-direction: column; }
+.nav-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.15rem; color: var(--burgundy); line-height: 1.2;
+}
+.nav-crp { font-size: 0.65rem; color: var(--text-light); letter-spacing: 0.06em; font-weight: 400; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500; color: var(--text-mid);
+  text-decoration: none; letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--red); }
+.nav-cta {
+  background: var(--red); color: #fff;
+  padding: 10px 24px; border-radius: 100px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+  text-decoration: none; transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--red-hover); color: #fff; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 64px 80px 80px;
+  background: var(--white);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--red); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 24px; height: 1px; background: var(--red);
+}
+.hero-h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.4rem, 3.6vw, 3.6rem);
+  color: var(--burgundy); line-height: 1.12;
+  letter-spacing: -0.01em; margin-bottom: 24px;
+}
+.hero-h1 em { font-style: italic; color: var(--red); }
+.hero-lead {
+  font-size: 1rem; font-weight: 300; color: var(--text-mid);
+  max-width: 460px; line-height: 1.8; margin-bottom: 44px;
+}
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 60px; }
+.btn-primary {
+  background: var(--red); color: #fff;
+  padding: 16px 36px; border-radius: 100px;
+  font-size: 0.88rem; font-weight: 600; letter-spacing: 0.03em;
+  text-decoration: none; transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--red-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(183,25,29,0.25); }
+.btn-ghost {
+  color: var(--burgundy); font-size: 0.85rem; font-weight: 500;
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.btn-ghost:hover { gap: 10px; color: var(--red); }
+.trust-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; }
+.trust-dot {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--blush); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; flex-shrink: 0;
+}
+.trust-text strong { display: block; font-size: 0.8rem; font-weight: 600; color: var(--burgundy); line-height: 1.2; }
+.trust-text span { font-size: 0.72rem; color: var(--text-light); font-weight: 400; }
+
+.hero-right {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, var(--pink) 0%, var(--burgundy) 100%);
+}
+.hero-right-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.hero-photo-note {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8rem;
+  font-style: italic;
+}
+.hero-blob {
+  position: absolute; top: -80px; right: -80px;
+  width: 340px; height: 340px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.hero-blob2 {
+  position: absolute; bottom: 60px; left: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(125,17,20,0.3);
+}
+
+/* ── SEÇÕES ── */
+section { padding: 100px 80px; }
+.section-eyebrow {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--red);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+}
+.section-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--red); }
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: var(--burgundy); line-height: 1.15; margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--red); }
+.section-sub {
+  font-size: 0.95rem; font-weight: 300; color: var(--text-mid);
+  max-width: 560px; line-height: 1.8;
+}
+
+/* ── PROBLEMA ── */
+.problema {
+  background: var(--burgundy);
+}
+.problema .section-eyebrow { color: var(--pink); }
+.problema .section-eyebrow::before { background: var(--pink); }
+.problema .section-title { color: #fff; }
+.problema .section-sub { color: rgba(238,150,154,0.8); max-width: 640px; }
+.problema-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 20px; margin-top: 56px;
+}
+.prob-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(238,150,154,0.2);
+  border-radius: 18px; padding: 36px 28px;
+}
+.prob-card-quote {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: 1.05rem; color: var(--pink); line-height: 1.65;
+  margin-bottom: 20px; position: relative;
+}
+.prob-card-quote::before {
+  content: '"';
+  font-size: 3rem; color: var(--red); opacity: 0.5;
+  font-family: 'Instrument Serif', serif;
+  line-height: 1; display: block; margin-bottom: -8px;
+}
+.prob-card p { font-size: 0.82rem; color: rgba(249,244,240,0.5); line-height: 1.65; font-weight: 300; }
+
+/* ── SOLUÇÃO ── */
+.solucao { background: var(--blush); }
+.solucao-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.sol-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.sol-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px;
+  display: flex; gap: 18px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.sol-card:hover { box-shadow: 0 8px 32px rgba(125,17,20,0.08); transform: translateY(-2px); }
+.sol-icon {
+  width: 44px; height: 44px; min-width: 44px; border-radius: 12px;
+  background: var(--blush); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.sol-card h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.05rem; color: var(--burgundy); margin-bottom: 6px;
+}
+.sol-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+
+/* Bio card */
+.bio-card {
+  background: var(--burgundy); border-radius: 24px;
+  padding: 44px; color: #fff; position: sticky; top: 88px;
+}
+.bio-initial {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--red); display: flex; align-items: center; justify-content: center;
+  font-family: 'Instrument Serif', serif; font-size: 1.8rem; color: #fff;
+  margin-bottom: 20px;
+}
+.bio-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem; color: #fff; margin-bottom: 4px;
+}
+.bio-role { font-size: 0.72rem; color: var(--pink); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; margin-bottom: 22px; }
+.bio-text { font-size: 0.88rem; color: rgba(249,244,240,0.75); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+.bio-creds { display: flex; flex-direction: column; gap: 10px; }
+.bio-cred { display: flex; gap: 10px; }
+.bio-cred-marker {
+  width: 5px; height: 5px; min-width: 5px; border-radius: 50%;
+  background: var(--pink); margin-top: 8px;
+}
+.bio-cred-txt { font-size: 0.8rem; color: rgba(249,244,240,0.55); line-height: 1.5; }
+
+/* ── COMO FUNCIONA ── */
+.como { background: var(--white); }
+.steps-row {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; margin-top: 60px; position: relative;
+}
+.steps-row::before {
+  content: ''; position: absolute; top: 22px; left: 60px; right: 60px; height: 1px;
+  background: var(--border); z-index: 0;
+}
+.step { position: relative; z-index: 1; padding-right: 24px; }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--white); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Instrument Serif', serif; font-size: 1rem; color: var(--red);
+  margin-bottom: 20px;
+}
+.step h3 { font-family: 'Instrument Serif', serif; font-size: 1.1rem; color: var(--burgundy); margin-bottom: 8px; }
+.step p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 64px; }
+.modal-card {
+  border-radius: 20px; padding: 40px;
+  border: 1px solid var(--border); position: relative; overflow: hidden;
+}
+.modal-card.individual { background: var(--blush); }
+.modal-card.casal { background: var(--burgundy); color: #fff; }
+.modal-tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 14px; display: block;
+}
+.modal-card.individual .modal-tag { color: var(--red); }
+.modal-card.casal .modal-tag { color: var(--pink); }
+.modal-card h3 {
+  font-family: 'Instrument Serif', serif; font-size: 1.3rem; margin-bottom: 12px;
+}
+.modal-card.individual h3 { color: var(--burgundy); }
+.modal-card.casal h3 { color: #fff; }
+.modal-card > p {
+  font-size: 0.88rem; line-height: 1.75; font-weight: 300; margin-bottom: 20px;
+}
+.modal-card.individual > p { color: var(--text-mid); }
+.modal-card.casal > p { color: rgba(249,244,240,0.7); }
+.modal-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.modal-list li { font-size: 0.82rem; display: flex; gap: 10px; font-weight: 300; }
+.modal-card.individual .modal-list li { color: var(--text-mid); }
+.modal-card.casal .modal-list li { color: rgba(249,244,240,0.65); }
+.modal-list li::before { content: '—'; flex-shrink: 0; }
+.modal-card.individual .modal-list li::before { color: var(--red); }
+.modal-card.casal .modal-list li::before { color: var(--pink); }
+
+/* ── DEPOIMENTOS ── */
+.depoimentos { background: var(--blush); }
+.depo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+.depo-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 18px; padding: 32px;
+  transition: box-shadow 0.25s;
+}
+.depo-card:hover { box-shadow: 0 8px 32px rgba(125,17,20,0.08); }
+.depo-stars { color: var(--red); font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 18px; }
+.depo-text {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: 1rem; color: var(--burgundy); line-height: 1.7; margin-bottom: 22px;
+}
+.depo-author { font-size: 0.75rem; color: var(--text-light); }
+.depo-author strong { display: block; font-family: 'Poppins', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--text-mid); }
+.depo-note { margin-top: 28px; text-align: center; font-size: 0.73rem; color: var(--text-light); font-style: italic; }
+
+/* ── FAQ ── */
+.faq { background: var(--white); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
+.faq-item {
+  background: var(--blush); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+  transition: background 0.2s;
+}
+.faq-item:hover { background: #f5eded; }
+.faq-item h3 {
+  font-size: 0.88rem; font-weight: 600; color: var(--burgundy);
+  margin-bottom: 12px; line-height: 1.45;
+}
+.faq-item p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+
+/* ── EBOOKS ── */
+.ebooks { background: var(--burgundy); }
+.ebooks .section-eyebrow { color: var(--pink); }
+.ebooks .section-eyebrow::before { background: var(--pink); }
+.ebooks .section-title { color: #fff; }
+.ebooks .section-sub { color: rgba(238,150,154,0.75); }
+.ebook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.ebook-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(238,150,154,0.18);
+  border-radius: 18px; padding: 32px;
+  display: flex; gap: 24px; align-items: flex-start;
+}
+.ebook-cover {
+  width: 60px; min-width: 60px; height: 82px; border-radius: 8px;
+  background: var(--red); display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+.ebook-card h3 { font-family: 'Instrument Serif', serif; font-size: 1.05rem; color: #fff; margin-bottom: 8px; }
+.ebook-card p { font-size: 0.82rem; color: rgba(249,244,240,0.6); line-height: 1.65; font-weight: 300; }
+.ebook-badge {
+  display: inline-block; margin-top: 12px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 100px;
+}
+.ebook-badge.available { background: var(--red); color: #fff; }
+.ebook-badge.soon { background: rgba(238,150,154,0.25); color: var(--pink); }
+
+/* ── CTA FINAL ── */
+.cta-final {
+  background: var(--red); text-align: center;
+  padding: 112px 80px;
+}
+.cta-final .section-eyebrow { color: rgba(255,255,255,0.65); justify-content: center; }
+.cta-final .section-eyebrow::before { background: rgba(255,255,255,0.4); }
+.cta-final h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  color: #fff; line-height: 1.15;
+  max-width: 660px; margin: 0 auto 20px;
+}
+.cta-final p {
+  color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300;
+  max-width: 480px; margin: 0 auto 44px; line-height: 1.8;
+}
+.btn-white {
+  background: #fff; color: var(--red);
+  padding: 18px 44px; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em;
+  text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+.cta-legal { margin-top: 22px; font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--burgundy); padding: 36px 80px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+footer p { font-size: 0.75rem; color: rgba(249,244,240,0.35); font-weight: 300; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  section { padding: 72px 24px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 96px 24px 64px; }
+  .hero-right { height: 260px; }
+  .problema-grid,
+  .depo-grid,
+  .faq-grid,
+  .ebook-grid,
+  .modal-grid,
+  .solucao-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .steps-row::before { display: none; }
+  .bio-card { position: static; }
+  footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
+  .cta-final { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <span class="nav-name">Rafaela Barcik</span>
+    <span class="nav-crp">Psicóloga · CRP 08/41844</span>
+  </div>
+  <div class="nav-links">
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#materiais">Materiais</a>
+  </div>
+  <a href="https://wa.me/5541997568891" class="nav-cta" target="_blank">Agendar sessão</a>
+</nav>
+
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Psicóloga clínica · Online</span>
+
+    <h1 class="hero-h1">
+      Um espaço seguro para<br>
+      falar sobre o que você<br>
+      <em>nunca conseguiu falar</em><br>
+      antes
+    </h1>
+
+    <p class="hero-lead">
+      Dificuldades sexuais e conflitos no relacionamento têm solução.
+      Com acompanhamento clínico, sem julgamento e no seu tempo.
+      Atendimento individual e de casal, 100% online.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/5541997568891" class="btn-primary" target="_blank">Quero agendar uma sessão</a>
+      <a href="#como-funciona" class="btn-ghost">Como funciona →</a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item">
+        <div class="trust-dot">🎓</div>
+        <div class="trust-text">
+          <strong>Pós-graduada</strong>
+          <span>Sexualidade Humana e Gênero</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot">💻</div>
+        <div class="trust-text">
+          <strong>100% online</strong>
+          <span>Todo o Brasil</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-dot">🔒</div>
+        <div class="trust-text">
+          <strong>Sigilo total</strong>
+          <span>Ética do CFP garantida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-blob"></div>
+    <div class="hero-blob2"></div>
+    <div class="hero-right-inner">
+      <span class="hero-photo-note">[ Foto profissional da Rafaela ]</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ PROBLEMA ════════════ -->
+<section class="problema">
+  <div class="section-eyebrow">Você se identifica?</div>
+  <h2 class="section-title">Isso não é frescura.<br>Isso é uma queixa clínica real.</h2>
+  <p class="section-sub">Muitas pessoas chegam aqui depois de anos achando que o problema era só delas. Ou depois de tentarem de tudo sem resultado.</p>
+
+  <div class="problema-grid">
+    <div class="prob-card">
+      <p class="prob-card-quote">Já fiz terapia antes, mas a psicóloga nunca abriu espaço para eu falar sobre sexo. Não sabia nem se podia.</p>
+      <p>Situação comum. Nem todo psicólogo tem formação específica em sexualidade.</p>
+    </div>
+    <div class="prob-card">
+      <p class="prob-card-quote">Já tentei de tudo: remédios, dicas da internet, produtos... nada resolveu de verdade.</p>
+      <p>Quando a origem é emocional ou relacional, só o acompanhamento clínico especializado chega na raiz do problema.</p>
+    </div>
+    <div class="prob-card">
+      <p class="prob-card-quote">A gente se comunica, mas não chega a acordo nenhum. A sensação é que estamos falando línguas diferentes.</p>
+      <p>Comunicar e ser compreendido são coisas diferentes. A terapia de casal trabalha exatamente esse ponto.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ SOLUÇÃO ════════════ -->
+<section class="solucao">
+  <div class="solucao-grid">
+    <div>
+      <div class="section-eyebrow">A abordagem</div>
+      <h2 class="section-title">Escuta clínica,<br><em>sem achismos</em></h2>
+      <p class="section-sub">Cada atendimento é construído a partir da sua história real, não de fórmulas prontas. As intervenções são embasadas clinicamente e ajustadas ao que faz sentido para você.</p>
+
+      <div class="sol-cards">
+        <div class="sol-card">
+          <div class="sol-icon">🧠</div>
+          <div>
+            <h3>Terapia individual (ACT)</h3>
+            <p>A Terapia de Aceitação e Compromisso ajuda a lidar com pensamentos e emoções difíceis sem que eles controlem suas escolhas e seu prazer.</p>
+          </div>
+        </div>
+        <div class="sol-card">
+          <div class="sol-icon">💬</div>
+          <div>
+            <h3>Terapia de casal (IBCT)</h3>
+            <p>A Terapia Comportamental Integrativa para Casal trabalha padrões de comportamento, regulação emocional e comunicação assertiva entre os dois.</p>
+          </div>
+        </div>
+        <div class="sol-card">
+          <div class="sol-icon">🎯</div>
+          <div>
+            <h3>Foco em queixas sexuais</h3>
+            <p>Desejo reduzido, anorgasmia, disfunção erétil, diferença de frequência sexual entre o casal. Queixas específicas merecem um olhar clínico específico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <div class="bio-initial">R</div>
+      <div class="bio-name">Rafaela Barcik Belich</div>
+      <div class="bio-role">Psicóloga Clínica · CRP 08/41844</div>
+      <p class="bio-text">
+        Psicóloga formada pela Universidade Tuiuti do Paraná, com pós-graduação em Sexualidade Humana e Gênero pela Unibrasil e formação em Terapia de Casal pela Atitude Cursos.
+        <br><br>
+        Além dos atendimentos clínicos, é palestrante, educadora sexual e supervisora de outros psicólogos. Não é aquela terapeuta que fica só acenando a cabeça. É direta, acolhedora, e faz toda a diferença ter alguém com formação específica para as suas queixas.
+      </p>
+      <div class="bio-creds">
+        <div class="bio-cred"><div class="bio-cred-marker"></div><div class="bio-cred-txt">Formação em Psicologia — Universidade Tuiuti do Paraná</div></div>
+        <div class="bio-cred"><div class="bio-cred-marker"></div><div class="bio-cred-txt">Pós-graduação em Sexualidade Humana e Gênero — Unibrasil</div></div>
+        <div class="bio-cred"><div class="bio-cred-marker"></div><div class="bio-cred-txt">Formação em Terapia de Casal — Atitude Cursos</div></div>
+        <div class="bio-cred"><div class="bio-cred-marker"></div><div class="bio-cred-txt">Supervisora clínica em sexualidade e relacionamento</div></div>
+        <div class="bio-cred"><div class="bio-cred-marker"></div><div class="bio-cred-txt">Palestrante em educação sexual para adolescentes e profissionais</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ COMO FUNCIONA ════════════ -->
+<section class="como" id="como-funciona">
+  <div class="section-eyebrow">O processo</div>
+  <h2 class="section-title">Como é, na prática?</h2>
+  <p class="section-sub">Sem burocracia. Você não precisa se preparar nem saber exatamente o que dizer. É só aparecer.</p>
+
+  <div class="steps-row">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Entre em contato</h3>
+      <p>Mande uma mensagem pelo WhatsApp com sua disponibilidade. Sem formulários longos.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Primeira sessão</h3>
+      <p>Um espaço para você se apresentar no seu tempo. Sem pressão para entrar em detalhes antes de se sentir seguro(a).</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Atendimento semanal</h3>
+      <p>Sessões de 50 minutos por vídeo chamada. Frequência semanal para construir progresso real.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Intervenções personalizadas</h3>
+      <p>Reflexões, atenção plena, escrita terapêutica, indicações de leitura. Tudo ajustado à sua realidade.</p>
+    </div>
+  </div>
+
+  <div class="modal-grid">
+    <div class="modal-card individual">
+      <span class="modal-tag">Atendimento Individual</span>
+      <h3>Para você, no seu espaço</h3>
+      <p>Para quem tem queixas sexuais pessoais ou quer compreender melhor sua sexualidade com acompanhamento clínico e sem julgamento.</p>
+      <ul class="modal-list">
+        <li>Baixo desejo sexual</li>
+        <li>Dificuldade de orgasmo (anorgasmia)</li>
+        <li>Disfunção erétil</li>
+        <li>Ansiedade e bloqueios relacionados à sexualidade</li>
+        <li>Queixas que nunca tiveram espaço em outras terapias</li>
+      </ul>
+    </div>
+    <div class="modal-card casal">
+      <span class="modal-tag">Terapia de Casal</span>
+      <h3>Para vocês dois, juntos</h3>
+      <p>Para casais que sentem que a comunicação existe, mas os conflitos se repetem. Especialmente quando a vida sexual está no centro da tensão.</p>
+      <ul class="modal-list">
+        <li>Diferença de frequência sexual entre o casal</li>
+        <li>Discussões que não chegam a acordo</li>
+        <li>Falta de conexão e intimidade</li>
+        <li>Medo de término por dificuldades sexuais</li>
+        <li>Reaprender a se comunicar como casal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ DEPOIMENTOS ════════════ -->
+<section class="depoimentos">
+  <div class="section-eyebrow">O que dizem</div>
+  <h2 class="section-title">Quem já passou por aqui</h2>
+  <p class="section-sub">Relatos reais de pessoas que encontraram um espaço seguro para falar sobre o que importa.</p>
+
+  <div class="depo-grid">
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Nunca pensei que conseguiria falar sobre isso com alguém. A Rafa tem um jeito de acolher que torna tudo mais leve, sem deixar de ser clínica.</p>
+      <div class="depo-author"><strong>A. M.</strong>Paciente individual</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Chegamos na terapia de casal com muita resistência. Depois de alguns meses, conseguimos ter conversas que nunca conseguimos ter em anos de relacionamento.</p>
+      <div class="depo-author"><strong>R. e G.</strong>Terapia de casal</div>
+    </div>
+    <div class="depo-card">
+      <div class="depo-stars">★★★★★</div>
+      <p class="depo-text">Já tinha feito terapia antes, mas o tema sexualidade nunca entrou. Com a Rafa foi diferente desde o começo. Ter formação específica faz toda a diferença.</p>
+      <div class="depo-author"><strong>T. L.</strong>Paciente individual</div>
+    </div>
+  </div>
+  <p class="depo-note">Relatos preservados com iniciais por ética e privacidade, conforme o Código de Ética do CFP.</p>
+</section>
+
+
+<!-- ════════════ FAQ ════════════ -->
+<section class="faq" id="faq">
+  <div class="section-eyebrow">Perguntas frequentes</div>
+  <h2 class="section-title">O que você precisa<br>saber antes</h2>
+  <p class="section-sub">Respostas diretas para as dúvidas mais comuns, inclusive as que você ficou com vergonha de pesquisar.</p>
+
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h3>O que é terapia sexual e para que serve?</h3>
+      <p>Terapia sexual é uma modalidade da psicoterapia clínica voltada para queixas relacionadas à sexualidade, como baixo desejo, dificuldade de orgasmo, disfunção erétil e ansiedade sexual. É conduzida por psicólogo(a) com formação especializada. Não envolve contato físico nem orientações sobre técnicas sexuais.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Como funciona a terapia de casal online?</h3>
+      <p>Os dois participam juntos das sessões por vídeo chamada, uma vez por semana, com 50 minutos de duração. A terapeuta atua como mediadora, ajudando o casal a identificar padrões de comportamento e construir uma comunicação mais assertiva.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Qual a diferença entre psicólogo e terapeuta sexual?</h3>
+      <p>Todo terapeuta sexual é psicólogo, mas nem todo psicólogo tem formação em sexualidade humana. A Rafaela possui pós-graduação específica em Sexualidade Humana e Gênero, o que a habilita clinicamente para tratar queixas sexuais com protocolos adequados.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Baixo desejo sexual tem tratamento?</h3>
+      <p>O baixo desejo sexual pode ter múltiplas origens: estresse, histórico emocional, conflitos no relacionamento ou questões hormonais. O acompanhamento clínico especializado trata as causas emocionais e relacionais, as mais comuns, com resultados consistentes e duradouros.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Disfunção erétil pode ser tratada com psicoterapia?</h3>
+      <p>Sim. Grande parte dos casos em homens jovens tem origem psicológica: ansiedade de desempenho, estresse, conflitos relacionais. A psicoterapia é clinicamente indicada nesses casos, muitas vezes em paralelo ao acompanhamento médico.</p>
+    </div>
+    <div class="faq-item">
+      <h3>O atendimento é sigiloso?</h3>
+      <p>Todo atendimento segue o sigilo profissional do Código de Ética do Conselho Federal de Psicologia. Em terapia de casal, o que é dito nas sessões conjuntas é compartilhado entre os dois, mas não há exposição de informações privadas de um para o outro sem consentimento.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Atende convênio? Tem reembolso?</h3>
+      <p>O atendimento é particular. É emitido recibo para que você solicite reembolso ao seu plano de saúde, mas os planos costumam ter valores de reembolso abaixo do valor da sessão. Valores e horários disponíveis diretamente pelo WhatsApp.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Quanto tempo leva para ver resultados?</h3>
+      <p>Depende da queixa, da história de cada pessoa e do engajamento no processo. O atendimento semanal cria consistência, e consistência gera resultados reais, diferentes das soluções pontuais que não tratam a raiz do problema.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ EBOOKS ════════════ -->
+<section class="ebooks" id="materiais">
+  <div class="section-eyebrow">Materiais</div>
+  <h2 class="section-title">Para quem quer<br>começar agora</h2>
+  <p class="section-sub">E-books com embasamento clínico para quem quer entender mais sobre sexualidade e relacionamento no próprio ritmo.</p>
+
+  <div class="ebook-grid">
+    <div class="ebook-card">
+      <div class="ebook-cover">📖</div>
+      <div>
+        <h3>Desejo Sexual: o que está por trás quando ele some</h3>
+        <p>Um guia acessível sobre os mecanismos do desejo sexual, o que o reduz e como reconhecer os sinais de que é hora de buscar acompanhamento clínico.</p>
+        <span class="ebook-badge available">Disponível agora</span>
+      </div>
+    </div>
+    <div class="ebook-card">
+      <div class="ebook-cover">💬</div>
+      <div>
+        <h3>Comunicação para Casais: como sair do ciclo de discussões sem fim</h3>
+        <p>Para casais que se comunicam mas não se entendem. Ferramentas práticas com base em terapia comportamental para conversas mais assertivas.</p>
+        <span class="ebook-badge soon">Em breve · Abril 2025</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ CTA FINAL ════════════ -->
+<section class="cta-final">
+  <div class="section-eyebrow">Próximo passo</div>
+  <h2>Você não precisa resolver isso sozinho(a)</h2>
+  <p>Seja uma queixa sexual que você nunca conseguiu nomear, ou um relacionamento que está chegando no limite, existe um caminho com acompanhamento clínico, segurança e acolhimento real.</p>
+  <a href="https://wa.me/5541997568891" class="btn-white" target="_blank">Falar com a Rafaela pelo WhatsApp →</a>
+  <p class="cta-legal">Sua mensagem é tratada com total sigilo · Atendimento 100% online · CRP 08/41844</p>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Rafaela Barcik Belich · Psicóloga Clínica</p>
+  <p>CRP 08/41844 · Atendimento online · Curitiba, PR</p>
+</footer>
+
+</body>
+</html>
